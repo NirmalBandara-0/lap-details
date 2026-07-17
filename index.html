@@ -1,11 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Laptop Details</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background:#f4f4f4;
+    margin:0;
+}
+
+header{
+    background:#0d6efd;
+    color:white;
+    padding:20px;
+    text-align:center;
+}
+
+.container{
+    width:80%;
+    margin:30px auto;
+}
+
+.card{
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,0.2);
+}
+
+input,select{
+    width:100%;
+    padding:10px;
+    margin:10px 0;
+}
+
+button{
+    background:#198754;
+    color:white;
+    border:none;
+    padding:10px 20px;
+    cursor:pointer;
+    border-radius:5px;
+}
+
+button:hover{
+    background:#157347;
+}
+
+#result{
+    margin-top:20px;
+    background:#e9ecef;
+    padding:15px;
+    border-radius:5px;
+}
+</style>
+
 </head>
 <body>
-    
+
+<header>
+<h1>Laptop Details System</h1>
+</header>
+
+<div class="container">
+<div class="card">
+
+<label>Brand</label>
+<select id="brand">
+<option>Dell</option>
+<option>HP</option>
+<option>Lenovo</option>
+<option>ASUS</option>
+<option>Acer</option>
+<option>Apple</option>
+</select>
+
+<label>Model</label>
+<input type="text" id="model" placeholder="Enter Model">
+
+<label>Processor</label>
+<input type="text" id="processor" placeholder="Intel Core i5">
+
+<label>RAM</label>
+<input type="text" id="ram" placeholder="8GB">
+
+<label>Storage</label>
+<input type="text" id="storage" placeholder="512GB SSD">
+
+<label>Display</label>
+<input type="text" id="display" placeholder='15.6" Full HD'>
+
+<label>Price (Rs.)</label>
+<input type="number" id="price">
+
+<button onclick="showDetails()">Show Details</button>
+
+<div id="result"></div>
+
+</div>
+</div>
+
+<script>
+function showDetails(){
+
+let brand=document.getElementById("brand").value;
+let model=document.getElementById("model").value;
+let processor=document.getElementById("processor").value;
+let ram=document.getElementById("ram").value;
+let storage=document.getElementById("storage").value;
+let display=document.getElementById("display").value;
+let price=document.getElementById("price").value;
+
+document.getElementById("result").innerHTML=`
+<h2>Laptop Details</h2>
+<p><strong>Brand:</strong> ${brand}</p>
+<p><strong>Model:</strong> ${model}</p>
+<p><strong>Processor:</strong> ${processor}</p>
+<p><strong>RAM:</strong> ${ram}</p>
+<p><strong>Storage:</strong> ${storage}</p>
+<p><strong>Display:</strong> ${display}</p>
+<p><strong>Price:</strong> Rs. ${price}</p>
+`;
+
+}
+</script>
+
 </body>
 </html>
